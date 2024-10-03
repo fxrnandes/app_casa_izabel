@@ -24,6 +24,9 @@ class HomePage extends StatelessWidget {
       ),
       endDrawer: Drawer(
         backgroundColor: const Color(0xFFFFF2FF), 
+        shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.zero, // Define bordas retas
+        ),
         child: ListView(
           padding: EdgeInsets.zero,
           children: [
