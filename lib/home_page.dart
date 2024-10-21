@@ -10,22 +10,22 @@ class HomePage extends StatelessWidget {
       backgroundColor: const Color(0xFFA0248D),
       appBar: AppBar(
         backgroundColor: const Color(0xFFA0248D),
-        elevation: 0, 
+        elevation: 0,
         actions: [
           Builder(
             builder: (context) => IconButton(
-              icon: const Icon(Icons.menu, color: Color(0xFFFFF2FF)), 
+              icon: const Icon(Icons.menu, color: Color(0xFFFFF2FF)),
               onPressed: () {
-                Scaffold.of(context).openEndDrawer(); 
+                Scaffold.of(context).openEndDrawer();
               },
             ),
           ),
         ],
       ),
       endDrawer: Drawer(
-        backgroundColor: const Color(0xFFFFF2FF), 
+        backgroundColor: const Color(0xFFFFF2FF),
         shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.zero, // Define bordas retas
+          borderRadius: BorderRadius.zero,
         ),
         child: ListView(
           padding: EdgeInsets.zero,
@@ -36,56 +36,58 @@ class HomePage extends StatelessWidget {
               child: Align(
                 alignment: Alignment.topRight,
                 child: IconButton(
-                  icon: const Icon(Icons.close, color: Color(0xFFA0248D)), 
+                  icon: const Icon(Icons.close, color: Color(0xFFA0248D)),
                   onPressed: () {
-                    Navigator.of(context).pop(); 
+                    Navigator.of(context).pop();
                   },
                 ),
               ),
             ),
             const SizedBox(height: 80),
-            const ListTile(
-              title: Text(
-                'Conheça a Casa Izabel', 
+            ListTile(
+              title: const Text(
+                'Conheça a Casa Izabel',
                 style: TextStyle(color: Color(0xFFA0248D)),
-                textAlign: TextAlign.center, 
+                textAlign: TextAlign.center,
               ),
-              onTap: null, 
+              onTap: () {
+                Navigator.pushNamed(context, '/izabel'); // Navega para IzabelScreen
+              },
             ),
             const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 40.0), 
+              padding: EdgeInsets.symmetric(horizontal: 40.0),
               child: Divider(
-                color: Color(0xFFA0248D), 
+                color: Color(0xFFA0248D),
                 thickness: 1,
               ),
             ),
             const ListTile(
               title: Text(
-                'Veja ONGs próximas', 
+                'Veja ONGs próximas',
                 style: TextStyle(color: Color(0xFFA0248D)),
-                textAlign: TextAlign.center, 
+                textAlign: TextAlign.center,
               ),
-              onTap: null, 
+              onTap: null, // Implementar navegação se necessário
             ),
             const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 40.0), 
+              padding: EdgeInsets.symmetric(horizontal: 40.0),
               child: Divider(
-                color: Color(0xFFA0248D), 
+                color: Color(0xFFA0248D),
                 thickness: 1,
               ),
             ),
             const ListTile(
               title: Text(
-                'Cadastre uma ONG', 
+                'Cadastre uma ONG',
                 style: TextStyle(color: Color(0xFFA0248D)),
-                textAlign: TextAlign.center, 
+                textAlign: TextAlign.center,
               ),
-              onTap: null, 
+              onTap: null, // Implementar navegação se necessário
             ),
             const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 40.0), 
+              padding: EdgeInsets.symmetric(horizontal: 40.0),
               child: Divider(
-                color: Color(0xFFA0248D), 
+                color: Color(0xFFA0248D),
                 thickness: 1,
               ),
             ),
@@ -98,7 +100,7 @@ class HomePage extends StatelessWidget {
           children: [
             const SizedBox(height: 120),
             Image.asset(
-              'assets/images/logo.png', 
+              'assets/images/logo.png', // Caminho para o logo da Casa Izabel
               width: 300,
               height: 200,
             ),
@@ -108,7 +110,7 @@ class HomePage extends StatelessWidget {
               height: 60,
               child: ElevatedButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, '/');
+                  Navigator.pushNamed(context, '/izabel'); // Navega para IzabelScreen
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color(0xFFFFF2FF),
